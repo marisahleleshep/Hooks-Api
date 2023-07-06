@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './style.css';
 
+
+
+
 const ProductDetails = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState();
@@ -23,16 +26,15 @@ const ProductDetails = () => {
     return <p>Loading product details...</p>;
   }
   return (
-    <div className='single'>
+    <div className='detail'>
       <h1>Product Details</h1>
-      <div className='one'>
-        <img src={product.thumbnail} alt={product.title} />
-        <h2>name:{product.title}</h2>
+      <div className='all'>
+        <img src={product.thumbnail} alt={product.name} />
+        <h2>name:{product.name}</h2>
         <p>Description:{product.description}</p>
         <p>Brand:{product.brand}</p>
-        <h4>Price:{product.price}</h4>
-        <h4>Ratings:{product.rating}</h4>
-        <h4>Stock:{product.stock}</h4>
+        <h4>Price:Ksh.{product.price}</h4>
+
       </div>
     </div>
   );

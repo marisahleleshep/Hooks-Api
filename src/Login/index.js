@@ -54,7 +54,8 @@ const Login = ()=>{
                 onChange={(p)=>setPassword(p.target.value)}/>
                 <br/>
                 <br/>
-               <Link to={`/home`}> <button  type="submit">Login</button></Link> 
+               <Link to={`/home`}> <button  className="submit">Login</button></Link> 
+              
             </form>
             {isSubmitted && <p>{message}</p>}
         </div>

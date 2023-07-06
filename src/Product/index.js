@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
- import {Link } from "react-router-dom";
+import {Link } from "react-router-dom";
 import './style.css';
 
 
@@ -35,23 +35,26 @@ const Product = () => {
 
   return (
     <div>
-        <Link to={`/form`} ><button className="add">Add Product</button></Link> 
+    
              <br/>
              <br/>
     <div className="product">    
       {products.map((item) => (
-        <div className="main" key={item.id}>
-          <img className="image" src={item.thumbnail} alt="visual of product"></img>
+        <div className="item" key={item.id}>
+          <img className="img" src={item.thumbnail} alt=" "></img>
           <h3 className="title">{item.title}</h3>
-          <h4 className="price">{item.price}</h4>
-          <h6 className="percent">{item.discountPercentage}</h6>
-          <Link to={`/information/${item.id}`} key={item.id} >
-          <button className="product-link">See Details</button>
+          <h4 className="price">Ksh.{item.price}</h4>
+          <h6 className="discount">{item.discountPercentage}%</h6>
+          <Link to={`/login/${item.id}`} key={item.id} >
+          <button className="links">See More</button>
+          <Link></Link>
           </Link>
         </div>
           
       ))}
     </div>
+    <Link to={`/ProductDetails`} ><button className="add">Add Product</button></Link> 
+    {/* <Link to={`/login`} ><button className="add">Login</button></Link>  */}
     </div>
   );
 };
