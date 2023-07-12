@@ -47,7 +47,7 @@ const Product = () => {
           <h6 className="discount">{item.discountPercentage}%</h6>
           <Link to={`/login/${item.id}`} key={item.id} >
           <button className="links">See More</button>
-          <Link></Link>
+         
           </Link>
         </div>
           

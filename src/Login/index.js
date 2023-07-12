@@ -42,7 +42,7 @@ const Login = ()=>{
     }
     
     return (
-           <div>
+            <div>
             <form className="form" onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 <input placeholder="Enter username" type="text" 
