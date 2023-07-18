@@ -1,78 +1,30 @@
-// import React, { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import './style.css';
-
-
-
-
-// const ViewProduct = () => { 
-//   const { productId } = useParams();
-//   const [product, setProduct] = useState();
-  
-//   useEffect(() => {
-//     const getProductDetails = async () => {
-//       try {
-//         const response = await fetch(`https://dummyjson.com/product/${productId}`);
-//         const data = await response.json();
-//         setProduct(data);
-//       } catch (error) {
-//         console.error(error);
-//       }
-//     };
-//     getProductDetails();
-//   }, [productId]);
-
-//   if (!product) {
-//     return <p>Loading product details...</p>;
-//   }
-//   return (
-//     <div className='detail'>
-//       <h1>Product Details</h1>
-//       <div className='all'>
-//         <img src={product.thumbnail} alt={product.name} />
-//         <h2>name:{product.name}</h2>
-//         <p>Description:{product.description}</p>
-//         <p>Brand:{product.brand}</p>
-//         <h4>Price:Ksh.{product.price}</h4>
-
-//       </div>
-//     </div>
-//   );
-// };
-// export default ViewProduct;
-
-
-
-
 import React, { useState } from 'react';
 
-const AddProductPage = ({ onProductAdded }) => {
+
+const AddProduct = ({ onProductAdded }) => {
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Prepare the product data
     const productData = {
       title: productName,
-      /* other product data */
     };
 
     try {
-      // Send a POST request to the endpoint
+
       const response = await fetch('https://dummyjson.com/products/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(productData),
       });
 
-      // Check if the request was successful
       if (response.ok) {
-        // Call the onProductAdded function with the new product details
+
         onProductAdded(productData);
 
-        // Reset the form inputs
+  
         setProductName('');
         setProductPrice('');
       } else {
@@ -113,4 +65,4 @@ const AddProductPage = ({ onProductAdded }) => {
   );
 };
 
-export default AddProductPage;
+export default AddProduct;

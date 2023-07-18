@@ -8,15 +8,13 @@ const Navigation = () => {
         <nav className="nav">
     
           <ul className="ul">
-            <li>
-              <a href="/home">Home</a>
+          <li>
+              <a href="/product">Product</a>
             </li>
             <li>
-              <a href="/about">Login</a>
+              <a href="/login">Login</a>
             </li>
-            <li>
-              <a href="/product">Products</a>
-            </li>
+          
            
           
           </ul>

@@ -45,16 +45,15 @@ const Product = () => {
           <h3 className="title">{item.title}</h3>
           <h4 className="price">Ksh.{item.price}</h4>
           <h6 className="discount">{item.discountPercentage}%</h6>
-          <Link to={`/login/${item.id}`} key={item.id} >
-          <button className="links">See More</button>
+          <Link to={`/productDetails/${item.id}`} key={item.id} >
+          <button  className="links">See More</button>
          
           </Link>
         </div>
           
       ))}
     </div>
-    <Link to={`/ProductDetails`} ><button className="add">Add Product</button></Link> 
-    {/* <Link to={`/login`} ><button className="add">Login</button></Link>  */}
+    <Link to={`/AddProduct`} ><button className="add">Add Product</button></Link> 
     </div>
   );
 };
