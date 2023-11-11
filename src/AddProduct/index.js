@@ -23,6 +23,7 @@ const AddProduct = ({ onProductAdded }) => {
       if (response.ok) {
 
         onProductAdded(productData);
+        console.log('product add successful');
 
   
         setProductName('');

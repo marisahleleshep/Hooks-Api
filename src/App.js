@@ -1,30 +1,28 @@
-import './App.css';
-import Product from './Product';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './Navigation';
 import Login from './Login';
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import Product from './Product';
 import ProductDetails from './ProductDetails';
 import AddProduct from './AddProduct';
 
-
-function App() {
+function App(){
   return (
-    <div >
-     <Navigation/> 
+    <div>
+      <Navigation />
       <BrowserRouter>
-      <Routes>
-      <Route path='/login' element={<Login/>}/>
-       <Route path='/product' element={<Product/>}/>
-       <Route path='/productDetails/:productId'element={<ProductDetails/>}/>
-       <Route path='/addProduct'element={<AddProduct/>}/>
-
-    
-
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/product' element={<Product />} />
+          <Route path='/productDetails/:productId' element={<ProductDetails />} />
+          <Route path='/addProduct' element={<AddProduct />} />
+          <Route path='*' element={<Navigate to="/login"/>} />
         </Routes>
-        </BrowserRouter> 
+      </BrowserRouter>
     </div>
-  ); 
+  );
 }
 
 export default App;
+
 
